@@ -5,5 +5,7 @@ import { AppStore } from "../redux/store"
 
 export const AuthGard = () =>{
     const userState = useSelector((store: AppStore) => store.user);
-    return userState.id ? <Outlet/> : <Navigate to={PublicRoutes.LOGIN} />
+    return userState.name ? <Outlet/> : <Navigate to={PublicRoutes.LOGIN} />
 }
+
+export default AuthGard;
